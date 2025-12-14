@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  top: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 0.75rem 2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='light'] .nav-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-color);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='light'] .nav-btn {
+  border: 1px solid var(--border-color);
+}
+
+.nav-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--border-color);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+
+.nav-btn:hover::before {
+  opacity: 1;
+}
+
+.nav-btn:hover {
+  border-color: var(--text-secondary);
+}
+
+.nav-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.nav-name::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;968px) {
+  .navbar {
+    top: 2rem;
+  }
+
+  .nav-container {
+    gap: 2.5rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 1.5rem;
+    padding: 1rem;
+  }
+
+  .nav-container {
+    gap: 1.5rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .nav-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+
+  .nav-name {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .nav-name::after {
+    width: 35px;
+    height: 2px;
+    bottom: -6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 1rem;
+  }
+
+  .nav-container {
+    gap: 1rem;
+  }
+
+
+  .nav-name::after {
+    width: 35px;
+    height: 2px;
+    bottom: -6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-name {
+    font-size: 1rem;
+  }
+}

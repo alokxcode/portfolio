@@ -1,0 +1,123 @@
+/* CSS Variables for Theming - GitHub Dark */
+:root {
+  --primary-color: #58a6ff;
+  --secondary-color: #79c0ff;
+  --accent-color: #1f6feb;
+  --bg-color: #0d1117;
+  --bg-secondary: #161b22;
+  --card-bg: #161b22;
+  --text-color: #c9d1d9;
+  --text-secondary: #8b949e;
+  --border-color: #30363d;
+  --nav-bg: rgba(22, 27, 34, 0.8);
+  --bg-primary: #0d1117;
+  --text-primary: #c9d1d9;
+}
+
+[data-theme='light'] {
+  --primary-color: #0969da;
+  --secondary-color: #0550ae;
+  --accent-color: #218bff;
+  --bg-color: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --card-bg: #ffffff;
+  --text-color: #24292f;
+  --text-secondary: #57606a;
+  --border-color: #d0d7de;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --bg-primary: #ffffff;
+  --text-primary: #24292f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Utility Classes */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
