@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import './Navbar.css';
 import DiscordStatus from './DiscordStatus';
 
-const Navbar = ({ theme, toggleTheme, onAboutClick, onContactClick }) => {
+const Navbar = ({ theme, toggleTheme, onAboutClick, onContactClick, onDiscordClick }) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Navbar = ({ theme, toggleTheme, onAboutClick, onContactClick }) => {
           About Me
         </motion.button>
 
-        <DiscordStatus userId="1381138523113000970" />
+        <DiscordStatus userId="1381138523113000970" onClick={onDiscordClick} />
 
         <motion.button
           className="nav-btn"

@@ -1,0 +1,155 @@
+.discord-dropdown {
+  position: fixed;
+  top: calc(2rem + 60px + 0.5rem);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 420px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.dropdown-loading,
+.dropdown-error {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dropdown-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.dropdown-username {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.dropdown-status-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.last-seen {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.dropdown-activity {
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+}
+
+.activity-custom {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.activity-emoji {
+  font-size: 1.1rem;
+}
+
+.activity-text {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.activity-game {
+  font-size: 0.9rem;
+}
+
+.activity-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.activity-details,
+.activity-state {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.activity-duration {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.dropdown-spotify {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.1) 0%, rgba(25, 20, 20, 0.1) 100%);
+  border: 1px solid rgba(29, 185, 84, 0.3);
+  border-radius: 6px;
+  padding: 0.6rem;
+}
+
+.spotify-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.spotify-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.spotify-song {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.2rem;
+}
+
+.spotify-artist {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .discord-dropdown {
+    width: calc(100vw - 2rem);
+    max-width: 320px;
+  }
+}

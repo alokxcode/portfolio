@@ -2,10 +2,15 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   background: transparent;
+  border: none;
   transition: all 0.3s ease;
   position: relative;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 .discord-status:hover .status-text {
@@ -30,7 +35,8 @@
   border-radius: 50%;
   position: relative;
   transition: all 0.3s ease;
-  box-shadow: 0 0 12px currentColor, 0 0 6px currentColor;
+  box-shadow: 0 0 16px rgba(59, 165, 92, 0.8), 0 0 8px rgba(59, 165, 92, 0.6), 0 0 4px rgba(59, 165, 92, 0.4);
+  filter: brightness(1.2) saturate(1.5);
 }
 
 .status-indicator::before {

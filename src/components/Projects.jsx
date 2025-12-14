@@ -1,74 +1,59 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   const projects = [
     {
       id: 1,
       title: 'E-Commerce Platform',
-      description: 'A full-featured online shopping platform with cart, payment integration, and admin dashboard',
-      image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      description: 'A comprehensive online shopping platform featuring real-time cart management, secure Stripe payment integration, inventory tracking, and a powerful admin dashboard for product and order management. Built with scalability in mind using microservices architecture.',
+      tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redis'],
       github: 'https://github.com',
       demo: 'https://demo.com',
-      featured: true
+      language: 'JavaScript',
+      stars: 234,
+      forks: 45
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'Collaborative task management tool with real-time updates and team features',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
-      tags: ['React', 'Firebase', 'Material-UI'],
+      title: 'Real-Time Task Management',
+      description: 'Collaborative project management tool with WebSocket-powered real-time updates, team workspaces, kanban boards, sprint planning, and time tracking. Features include drag-and-drop interface, notifications, and comprehensive analytics dashboard.',
+      tags: ['React', 'Socket.io', 'PostgreSQL', 'Express'],
       github: 'https://github.com',
       demo: 'https://demo.com',
-      featured: true
+      language: 'TypeScript',
+      stars: 156,
+      forks: 32
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'Beautiful weather app with forecasts, maps, and location-based alerts',
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop',
-      tags: ['React', 'OpenWeather API', 'Charts.js'],
+      title: 'Weather Intelligence Dashboard',
+      description: 'Advanced weather forecasting application with interactive maps, hourly and 7-day forecasts, severe weather alerts, air quality index, and historical data visualization. Integrates multiple weather APIs for accurate predictions.',
+      tags: ['React', 'OpenWeather', 'Mapbox', 'Chart.js'],
       github: 'https://github.com',
       demo: 'https://demo.com',
-      featured: false
+      language: 'JavaScript',
+      stars: 89,
+      forks: 21
     },
     {
       id: 4,
-      title: 'Social Media Clone',
-      description: 'Instagram-inspired social platform with posts, stories, and messaging',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
-      tags: ['Next.js', 'PostgreSQL', 'AWS S3'],
+      title: 'Social Media Platform',
+      description: 'Full-featured social networking platform inspired by Instagram with image/video posts, stories with 24h expiry, real-time messaging, follow system, explore feed with recommendation algorithm, and AWS S3 for media storage.',
+      tags: ['Next.js', 'PostgreSQL', 'AWS S3', 'Redis'],
       github: 'https://github.com',
       demo: 'https://demo.com',
-      featured: true
-    },
-    {
-      id: 5,
-      title: 'Portfolio Builder',
-      description: 'Create stunning portfolios with drag-and-drop interface and custom themes',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-      tags: ['Vue.js', 'TailwindCSS', 'Express'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'AI Chat Bot',
-      description: 'Intelligent chatbot powered by GPT with custom training and integrations',
-      image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=600&fit=crop',
-      tags: ['Python', 'OpenAI', 'FastAPI', 'React'],
-      github: 'https://github.com',
-      demo: 'https://demo.com',
-      featured: true
+      language: 'TypeScript',
+      stars: 312,
+      forks: 67
     }
   ];
 
@@ -109,14 +94,25 @@ const Projects = () => {
           {projects.map((project) => (
             <motion.div
               key={project.id}
-              className={`project-card ${project.featured ? 'featured' : ''}`}
+              className="project-card"
               variants={cardVariants}
-              whileHover={{ y: -10 }}
-              onClick={() => setSelectedProject(project)}
+              whileHover={{ y: -5 }}
+              onClick={() => navigate(`/project/${project.id}`)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="project-content">
-                {project.featured && <span className="featured-badge">⭐ Featured</span>}
-                <h3 className="project-title">{project.title}</h3>
+                <div className="project-header">
+                  <h3 className="project-title">{project.title}</h3>
+                  <div className="project-meta">
+                    <span className="project-language">
+                      <span className="language-dot" style={{ 
+                        backgroundColor: project.language === 'TypeScript' ? '#3178c6' : '#f1e05a' 
+                      }}></span>
+                      {project.language}
+                    </span>
+                  </div>
+                </div>
+
                 <p className="project-description">{project.description}</p>
 
                 <div className="project-tags">
@@ -131,7 +127,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-link"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     onClick={(e) => e.stopPropagation()}
                   >
                     <FaGithub /> Code
@@ -140,59 +136,34 @@ const Projects = () => {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="project-link"
-                    whileHover={{ scale: 1.1 }}
+                    className="project-link demo-link"
+                    whileHover={{ scale: 1.05 }}
                     onClick={(e) => e.stopPropagation()}
                   >
-                    <FaExternalLinkAlt /> Demo
+                    <FaExternalLinkAlt /> Live Demo
                   </motion.a>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-      </motion.div>
 
-      {/* Modal */}
-      {selectedProject && (
-        <motion.div
-          className="modal-overlay"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedProject(null)}
+        <motion.div 
+          className="see-more-container"
+          variants={cardVariants}
         >
-          <motion.div
-            className="modal-content"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            onClick={(e) => e.stopPropagation()}
+          <motion.a
+            href="https://github.com/alokxcode"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="see-more-btn"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <button className="modal-close" onClick={() => setSelectedProject(null)}>
-              <FaTimes />
-            </button>
-            <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />
-            <div className="modal-body">
-              <h2>{selectedProject.title}</h2>
-              <p>{selectedProject.description}</p>
-              <div className="project-tags">
-                {selectedProject.tags.map((tag) => (
-                  <span key={tag} className="tag">{tag}</span>
-                ))}
-              </div>
-              <div className="modal-actions">
-                <a href={selectedProject.github} target="_blank" rel="noopener noreferrer" className="modal-button">
-                  <FaGithub /> View Code
-                </a>
-                <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer" className="modal-button primary">
-                  <FaExternalLinkAlt /> Live Demo
-                </a>
-              </div>
-            </div>
-          </motion.div>
+            See More Projects on GitHub
+          </motion.a>
         </motion.div>
-      )}
+      </motion.div>
     </section>
   );
 };

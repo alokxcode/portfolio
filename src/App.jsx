@@ -1,55 +1,49 @@
-import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
-import AboutModal from './components/AboutModal';
-import ContactModal from './components/ContactModal';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useLayoutEffect, useRef } from 'react';
+import Home from './components/Home';
+import ProjectDetails from './components/ProjectDetails';
 import './App.css';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  const previousPath = useRef('/');
+
+  useLayoutEffect(() => {
+    // If coming back to home page from a project page
+    if (pathname === '/' && previousPath.current.startsWith('/project/')) {
+      // Scroll to projects section
+      setTimeout(() => {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    } else if (pathname !== '/') {
+      // Scroll to top for project details page
+      document.documentElement.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant'
+      });
+    }
+
+    previousPath.current = pathname;
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
-  const [theme, setTheme] = useState('dark');
-  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
-  useEffect(() => {
-    // Check for saved theme preference or default to 'dark'
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  };
-
-  const openAboutModal = () => setIsAboutModalOpen(true);
-  const closeAboutModal = () => setIsAboutModalOpen(false);
-  
-  const openContactModal = () => setIsContactModalOpen(true);
-  const closeContactModal = () => setIsContactModalOpen(false);
-
   return (
-    <div className="app">
-      <Navbar 
-        theme={theme} 
-        toggleTheme={toggleTheme} 
-        onAboutClick={openAboutModal}
-        onContactClick={openContactModal}
-      />
-      <main>
-        <Hero />
-        <Projects />
-        <Skills />
-      </main>
-      <Footer />
-      <AboutModal isOpen={isAboutModalOpen} onClose={closeAboutModal} />
-      <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="app">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
