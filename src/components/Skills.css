@@ -163,12 +163,14 @@
   border-color: #1f6feb;
   color: #fff;
   background: #1f6feb;
+  width: 163px;
 }
 
 .skill-supporting-tag {
   border-color: #28a745;
   color: #fff;
   background: #28a745;
+  width: 163px;
 }
 
 @media (max-width: 768px) {
@@ -176,16 +178,202 @@
     padding: 5rem 1.5rem;
   }
 
+  .skills-container {
+    max-width: 100%;
+  }
+
+  .section-subtitle-alt {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .languages-section {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
   .languages-grid {
-    gap: 1rem;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    justify-content: space-between;
   }
 
   .language-card {
-    min-width: 100px;
-    padding: 1.25rem 1.5rem;
+    min-width: 0;
+    flex: 1 1 0;
+    max-width: 19%;
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
   }
 
   .language-icon {
-    font-size: 2.5rem;
+    font-size: 1.4rem;
+  }
+
+  .language-name {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+
+  .skills-masonry {
+    column-count: 1;
+    column-gap: 0;
+    margin-top: 2rem;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .skill-card-header {
+    gap: 0.5rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .skill-card-title {
+    font-size: 1.1rem;
+  }
+
+  .skill-list {
+    gap: 0.65rem;
+  }
+
+  .skill-item {
+    gap: 0.4rem;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+
+  .skill-tags-container {
+    gap: 0.4rem;
+  }
+
+  .skill-usage-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .skill-primary-tag {
+    width: 163px;
+  }
+
+  .skill-supporting-tag {
+    width: 163px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 3.5rem 1rem;
+  }
+
+  .skills-container {
+    max-width: 100%;
+  }
+
+  .section-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-subtitle-alt {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .languages-section {
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .languages-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.3rem;
+    justify-content: space-between;
+  }
+
+  .language-card {
+    min-width: 0;
+    max-width: 19%;
+    flex: 1 1 0;
+    padding: 0.5rem 0.25rem;
+    border-radius: 6px;
+  }
+
+  .language-icon {
+    font-size: 1.1rem;
+  }
+
+  .language-name {
+    font-size: 0.6rem;
+    white-space: normal;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .language-tag {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .skills-masonry {
+    column-count: 1;
+    column-gap: 0;
+    margin-top: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+  }
+
+  .skill-card-header {
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .skill-card-title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .skill-card-accent {
+    width: 3px;
+    height: 18px;
+  }
+
+  .skill-list {
+    gap: 0.5rem;
+  }
+
+  .skill-item {
+    gap: 0.35rem;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
+
+  .skill-tags-container {
+    gap: 0.35rem;
+    flex-wrap: wrap;
+  }
+
+  .skill-usage-tag {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  .skill-primary-tag {
+    width: 163px;
+  }
+
+  .skill-supporting-tag {
+    width: 163px;
   }
 }

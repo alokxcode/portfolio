@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaMenu, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.css';
 import DiscordStatus from './DiscordStatus';
 
@@ -67,7 +67,7 @@ const Navbar = ({ theme, toggleTheme, onAboutClick, onContactClick, onDiscordCli
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            {mobileMenuOpen ? <FaTimes /> : <FaMenu />}
+            {mobileMenuOpen ? <FaTimes /> : <FaBars />}
           </motion.button>
         </div>
       </motion.nav>

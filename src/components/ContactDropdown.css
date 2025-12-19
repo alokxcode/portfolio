@@ -52,7 +52,7 @@
 
 .contact-link:hover {
   background: var(--bg-primary);
-  border-color: var(--primary-color);
+  border-color: #28a745;
   transform: translateX(4px);
 }
 
@@ -65,15 +65,15 @@
   background: var(--bg-primary);
   border: 1px solid var(--border-color);
   border-radius: 6px;
-  color: var(--primary-color);
+  color: #28a745;
   font-size: 1.1rem;
   flex-shrink: 0;
 }
 
 .contact-link:hover .contact-icon {
-  background: var(--primary-color);
-  color: var(--bg-primary);
-  border-color: var(--primary-color);
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
 }
 
 .contact-info {

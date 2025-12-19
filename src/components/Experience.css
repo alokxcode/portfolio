@@ -190,28 +190,157 @@
     padding: 5rem 1.5rem;
   }
 
+  .experience-container {
+    max-width: 100%;
+  }
+
+  .experience-sections-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
   .experience-section {
-    padding: 1.25rem;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .subsection-title {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.4rem;
   }
 
   .timeline {
-    padding-left: 1.5rem;
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    display: none;
   }
 
   .timeline-item {
-    padding-left: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-left: 0;
+    margin-bottom: 1.25rem;
   }
 
   .timeline-marker {
-    left: -1.56rem;
-  }
-
-  .experience-meta {
-    gap: 0.75rem;
+    display: none;
   }
 
   .timeline-content {
     padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .experience-role {
+    font-size: 0.95rem;
+  }
+
+  .experience-meta {
+    gap: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .experience-company,
+  .experience-duration {
+    font-size: 0.75rem;
+  }
+
+  .experience-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .know-more-btn {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience {
+    padding: 3.5rem 1rem;
+  }
+
+  .experience-container {
+    max-width: 100%;
+  }
+
+  .experience-sections-wrapper {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .experience-section {
+    padding: 0.85rem;
+    border-radius: 10px;
+  }
+
+  .subsection-title {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .timeline {
+    margin-top: 0.75rem;
+    padding-left: 0;
+  }
+
+  .timeline-item {
+    padding-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-content {
+    padding: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .experience-header {
+    margin-bottom: 0.4rem;
+  }
+
+  .experience-title-group {
+    gap: 0.35rem;
+  }
+
+  .experience-role {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .experience-meta {
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .experience-company,
+  .experience-duration {
+    font-size: 0.7rem;
+  }
+
+  .experience-type {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .experience-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-actions {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .know-more-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
   }
 }

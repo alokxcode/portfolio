@@ -44,12 +44,13 @@ const AboutDropdown = ({ isOpen, onClose, onContactClick }) => {
 
             <div className="about-paragraph">
               <p>
-                A passionate Backend Developer with 3+ years of experience building scalable, 
-                high-performance server-side applications. I specialize in RESTful APIs and 
-                microservices architecture, working primarily with Node.js, Python, and PostgreSQL. 
-                I love solving complex problems and turning ideas into efficient, maintainable code. 
-                Based in India, I'm always exploring new technologies and best practices to enhance 
-                my craft.
+                I am a Computer Science student focused on learning networking fundamentals and Linux systems.
+
+                I enjoy understanding how computers communicate over networks and have hands-on experience with TCP/IP basics, Linux command-line tools, and simple lab setups.
+
+                Currently, I'm strengthening my knowledge of networking protocols, operating systems, and scripting, with the goal of moving into an entry-level networking or system role.
+
+                I prefer learning by building, experimenting, and documenting what I learn.
               </p>
             </div>
 

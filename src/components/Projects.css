@@ -318,9 +318,77 @@
     padding: 5rem 1.5rem;
   }
 
+  .projects-container {
+    max-width: 100%;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .project-card {
+    border-radius: 12px;
+  }
+
+  .project-content {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .project-header {
+    gap: 0.35rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+  }
+
+  .project-meta {
+    gap: 0.75rem;
+    font-size: 0.7rem;
+  }
+
+  .project-description {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    min-height: auto;
+  }
+
+  .project-tags {
+    gap: 0.3rem;
+  }
+
+  .tag {
+    padding: 0 6px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+
+  .project-links {
+    gap: 0.4rem;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .project-link {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .see-more-container {
+    margin-top: 2rem;
+  }
+
+  .see-more-btn {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.85rem;
   }
 
   .modal-image {
@@ -331,7 +399,154 @@
     padding: 1.5rem;
   }
 
+  .modal-body h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-body p {
+    font-size: 1rem;
+  }
+
   .modal-actions {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 3.5rem 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-card {
+    border-radius: 10px;
+  }
+
+  .project-content {
+    padding: 0.85rem;
+    gap: 0.65rem;
+  }
+
+  .project-header {
+    gap: 0.3rem;
+    padding-bottom: 0.35rem;
+  }
+
+  .project-title {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .project-meta {
+    gap: 0.6rem;
+    font-size: 0.65rem;
+  }
+
+  .language-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .project-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    min-height: auto;
+  }
+
+  .read-more-link {
+    font-size: 0.75rem;
+  }
+
+  .project-tags {
+    gap: 0.25rem;
+  }
+
+  .tag {
+    padding: 0 5px;
+    height: 16px;
+    font-size: 0.65rem;
+  }
+
+  .project-links {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-top: 0.4rem;
+    margin-top: 0.4rem;
+  }
+
+  .project-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    flex: 0 1 calc(33.333% - 0.35rem);
+  }
+
+  .see-more-container {
+    margin-top: 1.5rem;
+  }
+
+  .see-more-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .modal-overlay {
+    padding: 1rem;
+  }
+
+  .modal-content {
+    border-radius: 16px;
+  }
+
+  .modal-image {
+    height: 200px;
+  }
+
+  .modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .modal-body h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .modal-body p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .modal-button {
+    padding: 0.8rem;
+    font-size: 0.9rem;
   }
 }
