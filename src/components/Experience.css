@@ -75,8 +75,8 @@
 }
 
 .timeline-content:hover {
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  border-color: var(--text-secondary);
+  border-color: rgba(31, 111, 235, 0.4);
+  transform: translateY(-4px);
 }
 
 .experience-header {

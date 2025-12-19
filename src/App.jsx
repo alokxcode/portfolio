@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useLayoutEffect, useRef } from 'react';
 import Home from './components/Home';
 import ProjectDetails from './components/ProjectDetails';
+import ExperienceDetails from './components/ExperienceDetails';
 import './App.css';
 
 function ScrollToTop() {
@@ -18,8 +19,16 @@ function ScrollToTop() {
           projectsSection.scrollIntoView({ behavior: 'smooth' });
         }
       }, 0);
+    } else if (pathname === '/' && previousPath.current.startsWith('/experience/')) {
+      // Scroll to experience section
+      setTimeout(() => {
+        const experienceSection = document.getElementById('experience');
+        if (experienceSection) {
+          experienceSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
     } else if (pathname !== '/') {
-      // Scroll to top for project details page
+      // Scroll to top for details pages
       document.documentElement.scrollTo({
         top: 0,
         left: 0,
@@ -41,6 +50,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project/:id" element={<ProjectDetails />} />
+          <Route path="/experience/:id" element={<ExperienceDetails />} />
         </Routes>
       </div>
     </Router>

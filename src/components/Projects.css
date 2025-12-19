@@ -19,13 +19,13 @@
 .projects::before {
   top: -120px;
   right: -120px;
-  background: radial-gradient(circle, rgba(40, 167, 69, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(31, 111, 235, 0.4) 0%, transparent 70%);
 }
 
 .projects::after {
   bottom: -140px;
   left: -100px;
-  background: radial-gradient(circle, rgba(32, 201, 151, 0.3) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(40, 167, 69, 0.3) 0%, transparent 70%);
 }
 
 .projects-container {
@@ -76,15 +76,14 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(40, 167, 69, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(31, 111, 235, 0.5), transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(40, 167, 69, 0.2);
-  border-color: rgba(40, 167, 69, 0.4);
+  border-color: rgba(31, 111, 235, 0.4);
 }
 
 .project-card:hover::before {
@@ -110,10 +109,7 @@
 .project-title {
   font-size: 1.15rem;
   font-weight: 600;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1f6feb;
   line-height: 1.4;
   margin: 0;
   cursor: pointer;
@@ -121,7 +117,7 @@
 }
 
 .project-title:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.3);
   transform: translateX(4px);
 }
 
@@ -161,7 +157,7 @@
 }
 
 .read-more-link {
-  color: #28a745;
+  color: #1f6feb;
   font-weight: 600;
   cursor: pointer;
   text-decoration: underline;
@@ -169,7 +165,7 @@
 }
 
 .read-more-link:hover {
-  color: #20c997;
+  color: #28a745;
 }
 
 .project-tags {
@@ -184,19 +180,19 @@
   height: auto;
   display: inline-flex;
   align-items: center;
-  background: rgba(40, 167, 69, 0.1);
-  color: #28a745;
+  background: rgba(31, 111, 235, 0.1);
+  color: #1f6feb;
   border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 600;
-  border: 1px solid rgba(40, 167, 69, 0.3);
+  border: 1px solid rgba(31, 111, 235, 0.3);
   transition: all 0.3s ease;
 }
 
 .tag:hover {
-  background: rgba(40, 167, 69, 0.2);
+  background: rgba(31, 111, 235, 0.2);
   transform: translateY(-2px);
-  border-color: #28a745;
+  border-color: #1f6feb;
 }
 
 .project-links {
@@ -216,7 +212,7 @@
   background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
   text-decoration: none;
-  border: 1px solid rgba(40, 167, 69, 0.3);
+  border: 1px solid rgba(31, 111, 235, 0.3);
   border-radius: 8px;
   font-size: 0.8125rem;
   font-weight: 600;
@@ -227,11 +223,11 @@
 }
 
 .project-link:hover {
-  background: rgba(40, 167, 69, 0.1);
-  border-color: #28a745;
-  color: #28a745;
+  background: rgba(31, 111, 235, 0.1);
+  border-color: #1f6feb;
+  color: #1f6feb;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2);
+  box-shadow: 0 4px 12px rgba(31, 111, 235, 0.2);
 }
 
 .project-link.demo-link {
@@ -255,9 +251,9 @@
 
 .see-more-btn {
   padding: 0.75rem 2rem;
-  background: rgba(40, 167, 69, 0.1);
+  background: rgba(31, 111, 235, 0.1);
   color: var(--text-primary);
-  border: 1px solid rgba(40, 167, 69, 0.3);
+  border: 1px solid rgba(31, 111, 235, 0.3);
   border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -270,11 +266,11 @@
 }
 
 .see-more-btn:hover {
-  background: #28a745;
+  background: linear-gradient(135deg, #1f6feb 0%, #28a745 100%);
   color: white;
-  border-color: #28a745;
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
+  box-shadow: 0 4px 16px rgba(31, 111, 235, 0.4);
 }
 
 /* Modal Styles */

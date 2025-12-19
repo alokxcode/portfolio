@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaBriefcase, FaCalendar } from 'react-icons/fa';
 import './Experience.css';
 
 const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const navigate = useNavigate();
 
   const professionalJourney = [
     {
@@ -106,7 +108,12 @@ const Experience = () => {
                   <p className="experience-description">{exp.description}</p>
                   
                   <div className="experience-actions">
-                    <button className="know-more-btn">Know More</button>
+                    <button 
+                      className="know-more-btn"
+                      onClick={() => navigate(`/experience/${exp.id}`)}
+                    >
+                      Know More
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -145,7 +152,12 @@ const Experience = () => {
                     <p className="experience-description">{contrib.description}</p>
                     
                     <div className="experience-actions">
-                      <button className="know-more-btn">Know More</button>
+                      <button 
+                        className="know-more-btn"
+                        onClick={() => navigate(`/experience/${contrib.id}`)}
+                      >
+                        Know More
+                      </button>
                     </div>
                   </div>
                 </motion.div>

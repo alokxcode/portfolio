@@ -100,8 +100,8 @@
 }
 
 .skill-card:hover {
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  border-color: var(--text-secondary);
+  border-color: rgba(31, 111, 235, 0.4);
+  transform: translateY(-4px);
 }
 
 .skill-card-header {
@@ -183,8 +183,8 @@
 .opensource-toggle-btn {
   width: 100%;
   padding: 1.25rem 2rem;
-  background: rgba(40, 167, 69, 0.1);
-  border: 2px solid #28a745;
+  background: rgba(31, 111, 235, 0.1);
+  border: 2px solid rgba(31, 111, 235, 0.3);
   border-radius: 12px;
   color: var(--text-primary);
   font-size: 1.25rem;
@@ -194,12 +194,14 @@
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .opensource-toggle-btn:hover {
-  background: rgba(40, 167, 69, 0.2);
+  background: rgba(31, 111, 235, 0.15);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+  box-shadow: 0 8px 24px rgba(31, 111, 235, 0.3);
+  border-color: #1f6feb;
 }
 
 .toggle-icon {
@@ -222,14 +224,10 @@
 }
 
 .project-name {
-  color: var(--text-primary);
+  color: #1f6feb;
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .opensource-description {
@@ -248,22 +246,23 @@
 }
 
 .contribution-card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(31, 111, 235, 0.3);
   border-radius: 12px;
   padding: 2rem;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .contribution-card:hover {
-  border-color: #28a745;
-  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.15);
+  border-color: #1f6feb;
+  transform: translateY(-8px);
 }
 
 .contribution-card h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #1f6feb;
   margin: 0 0 1rem 0;
 }
 
