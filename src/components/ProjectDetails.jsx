@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaArrowLeft, FaBook } from 'react-icons/fa';
 import './ProjectDetails.css';
 
 const ProjectDetails = () => {
@@ -12,89 +12,49 @@ const ProjectDetails = () => {
       id: 1,
       title: 'E-Commerce Platform',
       description: 'A comprehensive online shopping platform featuring real-time cart management, secure Stripe payment integration, inventory tracking, and a powerful admin dashboard for product and order management. Built with scalability in mind using microservices architecture.',
-      fullDescription: `This full-stack e-commerce platform is designed to handle high traffic and provide a seamless shopping experience. 
-
-Key Features:
-• Real-time inventory management with automatic stock updates
-• Secure payment processing through Stripe API integration
-• Advanced product search and filtering with Elasticsearch
-• User authentication and authorization with JWT
-• Shopping cart persistence across sessions
-• Order tracking and management system
-• Admin dashboard with analytics and reporting
-• Email notifications for orders and shipping updates
-• Product recommendations using collaborative filtering
-• Mobile-responsive design for all screen sizes
-
-Technical Implementation:
-The backend is built with Node.js and Express, using MongoDB for flexible data storage and Redis for caching frequently accessed data. The frontend uses React with Redux for state management, ensuring smooth user interactions. The application follows microservices architecture, with separate services for user management, product catalog, orders, and payments.`,
+      whatItDoes: 'This full-stack e-commerce platform provides a complete online shopping experience with real-time inventory management, secure payment processing through Stripe, advanced product search with Elasticsearch, user authentication, shopping cart persistence, order tracking, admin dashboard with analytics, email notifications, and product recommendations. The backend is built with Node.js and Express, using MongoDB for data storage and Redis for caching. The frontend uses React with Redux for state management, following a microservices architecture.',
+      whyIBuilt: 'I built this project to understand the complexities of building a scalable e-commerce system and to gain hands-on experience with microservices architecture, payment gateway integration, and real-time data synchronization. I wanted to create a production-ready application that could handle high traffic while maintaining data consistency across multiple services.',
+      challenges: 'The main challenges were implementing real-time inventory synchronization across multiple microservices to prevent overselling, handling payment failures gracefully with proper retry mechanisms and error handling, optimizing database queries for large product catalogs to maintain fast response times, and ensuring data consistency between services.',
+      solutions: 'I solved the inventory sync issue by implementing an event-driven architecture using message queues to propagate inventory changes across services. For payment failures, I created a robust error handling system with retry logic and fallback mechanisms. Database performance was improved by implementing proper indexing, query optimization, and caching strategies with Redis. I ensured data consistency using distributed transactions and eventual consistency patterns where appropriate.',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redis'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'JavaScript',
       stars: 234,
-      forks: 45,
-      challenges: 'Implementing real-time inventory sync across multiple services, handling payment failures gracefully, optimizing database queries for large product catalogs.',
-      learnings: 'Gained deep understanding of microservices architecture, payment gateway integration, and building scalable e-commerce systems.'
+      forks: 45
     },
     {
       id: 2,
       title: 'Real-Time Task Management',
       description: 'Collaborative project management tool with WebSocket-powered real-time updates, team workspaces, kanban boards, sprint planning, and time tracking. Features include drag-and-drop interface, notifications, and comprehensive analytics dashboard.',
-      fullDescription: `A comprehensive project management solution designed for agile teams working remotely.
-
-Key Features:
-• Real-time collaboration with WebSocket technology
-• Drag-and-drop kanban boards for task management
-• Sprint planning and burndown charts
-• Team workspaces with role-based permissions
-• Time tracking and productivity analytics
-• Task dependencies and milestone tracking
-• File attachments and comments on tasks
-• Email and in-app notifications
-• Calendar integration for deadlines
-• Export reports in multiple formats
-
-Technical Implementation:
-Built with React and TypeScript for type safety and better developer experience. Socket.io powers the real-time features, allowing instant updates across all connected clients. PostgreSQL handles relational data with optimized queries, and Redis manages real-time session data and caching.`,
+      whatItDoes: 'This collaborative project management tool enables agile teams to work together remotely with real-time updates powered by WebSocket technology. It features drag-and-drop kanban boards, sprint planning with burndown charts, team workspaces with role-based permissions, time tracking, task dependencies, file attachments, email and in-app notifications, and calendar integration. Built with React and TypeScript, it uses Socket.io for real-time features, PostgreSQL for data storage, and Redis for session management.',
+      whyIBuilt: 'I created this project to address the challenges remote teams face in collaborating effectively. I wanted to build a solution that provides instant updates across all team members without page refreshes, making project management more seamless and intuitive. This project allowed me to explore real-time communication patterns and understand how to build truly collaborative applications.',
+      challenges: 'The major challenges included managing WebSocket connections at scale to handle multiple simultaneous users, implementing proper handling of offline scenarios where users might lose connectivity temporarily, ensuring optimistic UI updates work correctly and sync when the connection is restored, and preventing race conditions in collaborative editing scenarios.',
+      solutions: 'I implemented a connection pooling strategy to manage WebSocket connections efficiently and added automatic reconnection logic with exponential backoff. For offline scenarios, I created a local queue system that stores actions and syncs them when connectivity is restored. Optimistic UI updates were handled with a rollback mechanism for failed operations. I also implemented operational transformation techniques to resolve conflicts in collaborative editing.',
       tags: ['React', 'Socket.io', 'PostgreSQL', 'Express'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'TypeScript',
       stars: 156,
-      forks: 32,
-      challenges: 'Managing WebSocket connections at scale, handling offline scenarios, implementing optimistic UI updates.',
-      learnings: 'Mastered real-time communication patterns, conflict resolution in collaborative editing, and building responsive drag-and-drop interfaces.'
+      forks: 32
     },
     {
       id: 3,
       title: 'Weather Intelligence Dashboard',
       description: 'Advanced weather forecasting application with interactive maps, hourly and 7-day forecasts, severe weather alerts, air quality index, and historical data visualization. Integrates multiple weather APIs for accurate predictions.',
-      fullDescription: `A feature-rich weather dashboard that provides comprehensive meteorological data visualization.
-
-Key Features:
-• Interactive weather maps with multiple layers
-• Hourly, daily, and weekly forecasts
-• Severe weather alerts and notifications
-• Air quality index tracking
-• Historical weather data and trends
-• Location-based automatic updates
-• Multiple location management
-• UV index and sunrise/sunset times
-• Wind speed and direction visualization
-• Precipitation probability charts
-• Temperature feels-like calculations
-
-Technical Implementation:
-The application integrates OpenWeather API for forecast data and Mapbox for interactive mapping. Chart.js provides beautiful data visualizations. The frontend is built with React and uses context API for state management. Weather data is cached locally to reduce API calls and improve performance.`,
+      whatItDoes: 'This weather intelligence dashboard provides comprehensive meteorological data visualization with interactive weather maps featuring multiple layers, hourly/daily/weekly forecasts, severe weather alerts, air quality index tracking, historical weather trends, location-based automatic updates, UV index monitoring, and detailed wind and precipitation visualizations. The application integrates OpenWeather API for forecast data and Mapbox for interactive mapping, with Chart.js providing beautiful data visualizations.',
+      whyIBuilt: 'I built this project to create a more intuitive and comprehensive weather application than existing solutions. I wanted to combine multiple data sources into a single, beautiful interface that makes complex meteorological data easy to understand for everyone. This project also gave me an opportunity to work with geospatial data and advanced data visualization techniques.',
+      challenges: 'The main challenges were integrating multiple weather APIs with different data formats and ensuring they work together seamlessly, optimizing the performance of interactive map rendering with multiple layers without causing lag or excessive memory usage, and implementing an intelligent caching strategy that balances API rate limits with data freshness.',
+      solutions: 'I created a unified data adapter layer that normalizes data from different APIs into a consistent format, making it easier to work with. For map performance, I implemented lazy loading of map layers, tile caching, and WebGL rendering for smooth interactions. The caching strategy uses a combination of time-based invalidation and conditional requests to the APIs, storing data in IndexedDB for offline access while respecting API quotas.',
       tags: ['React', 'OpenWeather', 'Mapbox', 'Chart.js'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'JavaScript',
       stars: 89,
-      forks: 21,
-      challenges: 'Handling multiple API integrations, optimizing map rendering performance, implementing accurate weather data caching.',
-      learnings: 'Learned advanced data visualization techniques, working with geolocation APIs, and creating intuitive weather data displays.'
+      forks: 21
     },
     {
       id: 4,
@@ -173,13 +133,14 @@ Built with Next.js for server-side rendering and optimal performance. PostgreSQL
               }}></span>
               {project.language}
             </span>
-            <span className="project-stat">⭐ {project.stars}</span>
-            <span className="project-stat">🔱 {project.forks}</span>
           </div>
           <p className="project-short-desc">{project.description}</p>
           <div className="project-actions">
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="action-btn">
               <FaGithub /> View Code
+            </a>
+            <a href={project.docs} target="_blank" rel="noopener noreferrer" className="action-btn">
+              <FaBook /> Docs
             </a>
             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="action-btn primary">
               <FaExternalLinkAlt /> Live Demo
@@ -194,12 +155,13 @@ Built with Next.js for server-side rendering and optimal performance. PostgreSQL
           transition={{ delay: 0.2 }}
         >
           <div className="details-section">
-            <h2>Overview</h2>
-            <div className="overview-content">
-              {project.fullDescription.split('\n').map((paragraph, index) => (
-                <p key={index}>{paragraph}</p>
-              ))}
-            </div>
+            <h2>What This Project Does</h2>
+            <p>{project.whatItDoes}</p>
+          </div>
+
+          <div className="details-section">
+            <h2>Why I Built This</h2>
+            <p>{project.whyIBuilt}</p>
           </div>
 
           <div className="details-section">
@@ -212,13 +174,13 @@ Built with Next.js for server-side rendering and optimal performance. PostgreSQL
           </div>
 
           <div className="details-section">
-            <h2>Challenges & Solutions</h2>
+            <h2>Challenges I Faced</h2>
             <p>{project.challenges}</p>
           </div>
 
           <div className="details-section">
-            <h2>Key Learnings</h2>
-            <p>{project.learnings}</p>
+            <h2>How I Solved Them</h2>
+            <p>{project.solutions}</p>
           </div>
         </motion.div>
       </div>

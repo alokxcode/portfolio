@@ -173,6 +173,107 @@
   width: 163px;
 }
 
+/* Non-Tech Open Source Section */
+.opensource-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.opensource-toggle-btn {
+  width: 100%;
+  padding: 1.25rem 2rem;
+  background: rgba(40, 167, 69, 0.1);
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.opensource-toggle-btn:hover {
+  background: rgba(40, 167, 69, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.toggle-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.open {
+  transform: rotate(180deg);
+}
+
+.opensource-content {
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.opensource-project {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.project-name {
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.opensource-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contribution-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contribution-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.contribution-card:hover {
+  border-color: #28a745;
+  box-shadow: 0 8px 24px rgba(40, 167, 69, 0.15);
+}
+
+.contribution-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.contribution-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .skills {
     padding: 5rem 1.5rem;
@@ -263,6 +364,33 @@
 
   .skill-supporting-tag {
     width: 163px;
+  }
+
+  .opensource-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .opensource-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contribution-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contribution-card {
+    padding: 1.5rem;
+  }
+
+  .contribution-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .contribution-card p {
+    font-size: 0.9rem;
   }
 }
 
@@ -375,5 +503,50 @@
 
   .skill-supporting-tag {
     width: 163px;
+  }
+
+  .opensource-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .opensource-toggle-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+  }
+
+  .toggle-icon {
+    font-size: 0.85rem;
+  }
+
+  .opensource-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-name {
+    font-size: 1.15rem;
+  }
+
+  .contribution-cards {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .contribution-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .contribution-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .contribution-card p {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }

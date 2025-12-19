@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { 
   FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaDatabase,
   FaHtml5, FaCss3Alt, FaJs, FaAws, FaFigma, FaJava, FaLinux, FaCode
@@ -15,6 +15,7 @@ import './Skills.css';
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [showOpenSource, setShowOpenSource] = useState(false);
 
   const languages = [
     { name: 'Go', icon: SiGo, tag: 'Mastered', tagColor: '#00ADD8' },
@@ -181,6 +182,52 @@ const Skills = () => {
               </motion.div>
             ))}
           </div>
+        </motion.div>
+
+        {/* Non-Tech Open Source Contributions Section */}
+        <motion.div className="opensource-section" variants={itemVariants}>
+          <button 
+            className="opensource-toggle-btn"
+            onClick={() => setShowOpenSource(!showOpenSource)}
+          >
+            Non-Tech Open Source Contributions
+            <span className={`toggle-icon ${showOpenSource ? 'open' : ''}`}>▼</span>
+          </button>
+          
+          {showOpenSource && (
+            <motion.div 
+              className="opensource-content"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="opensource-project">
+                <h3 className="project-name">Open Neuromorphic</h3>
+                <p className="opensource-description">
+                  Contributing to the Open Neuromorphic community through non-technical initiatives 
+                  to help advance neuromorphic computing research and accessibility.
+                </p>
+              </div>
+              
+              <div className="contribution-cards">
+                <motion.div className="contribution-card" whileHover={{ y: -5 }}>
+                  <h3>Documentation</h3>
+                  <p>Writing and improving project documentation, tutorials, and guides to help researchers and developers get started with neuromorphic computing.</p>
+                </motion.div>
+                
+                <motion.div className="contribution-card" whileHover={{ y: -5 }}>
+                  <h3>Community Support</h3>
+                  <p>Actively helping community members with troubleshooting, answering questions, and providing guidance on neuromorphic hardware and software.</p>
+                </motion.div>
+                
+                <motion.div className="contribution-card" whileHover={{ y: -5 }}>
+                  <h3>Graphic Designing</h3>
+                  <p>Creating visual assets, diagrams, and design materials to make complex neuromorphic concepts more accessible and engaging.</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
       </motion.div>
     </section>
