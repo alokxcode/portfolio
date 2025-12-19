@@ -108,6 +108,13 @@
   min-height: 4.5rem;
 }
 
+.read-more-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .project-tags {
   display: flex;
   flex-wrap: wrap;

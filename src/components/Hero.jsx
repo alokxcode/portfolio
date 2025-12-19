@@ -42,7 +42,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
         >
-          Alok Kumar
+          Manavya
         </motion.h1>
 
         {/* Title */}
@@ -52,7 +52,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          Backend Developer
+          "Magic exists; we just don't call it by its name."
         </motion.h2>
 
         {/* Scroll Indicator */}

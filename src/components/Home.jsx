@@ -59,7 +59,8 @@ const Home = () => {
       />
       <AboutDropdown 
         isOpen={isAboutDropdownOpen} 
-        onClose={closeAboutDropdown} 
+        onClose={closeAboutDropdown}
+        onContactClick={toggleContactDropdown}
       />
       <ContactDropdown 
         isOpen={isContactDropdownOpen} 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaBook } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -18,6 +18,7 @@ const Projects = () => {
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redis'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'JavaScript',
       stars: 234,
       forks: 45
@@ -29,6 +30,7 @@ const Projects = () => {
       tags: ['React', 'Socket.io', 'PostgreSQL', 'Express'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'TypeScript',
       stars: 156,
       forks: 32
@@ -40,6 +42,7 @@ const Projects = () => {
       tags: ['React', 'OpenWeather', 'Mapbox', 'Chart.js'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'JavaScript',
       stars: 89,
       forks: 21
@@ -51,6 +54,7 @@ const Projects = () => {
       tags: ['Next.js', 'PostgreSQL', 'AWS S3', 'Redis'],
       github: 'https://github.com',
       demo: 'https://demo.com',
+      docs: 'https://docs.com',
       language: 'TypeScript',
       stars: 312,
       forks: 67
@@ -113,7 +117,21 @@ const Projects = () => {
                   </div>
                 </div>
 
-                <p className="project-description">{project.description}</p>
+                <p className="project-description">
+                  {project.description}
+                  {' '}
+                  <motion.span
+                    className="read-more-link"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/project/${project.id}`);
+                    }}
+                  >
+                    Read more
+                  </motion.span>
+                </p>
 
                 <div className="project-tags">
                   {project.tags.map((tag) => (
@@ -131,6 +149,16 @@ const Projects = () => {
                     onClick={(e) => e.stopPropagation()}
                   >
                     <FaGithub /> Code
+                  </motion.a>
+                  <motion.a
+                    href={project.docs}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                    whileHover={{ scale: 1.05 }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <FaBook /> Docs
                   </motion.a>
                   <motion.a
                     href={project.demo}

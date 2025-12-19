@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaEnvelope } from 'react-icons/fa';
 import './AboutDropdown.css';
 
-const AboutDropdown = ({ isOpen, onClose }) => {
+const AboutDropdown = ({ isOpen, onClose, onContactClick }) => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const AboutDropdown = ({ isOpen, onClose }) => {
             </div>
 
             <div className="about-intro">
-              <h2 className="intro-greeting">Hey I'm Alok.</h2>
+              <h2 className="intro-greeting">Hey I'm Manavya.</h2>
             </div>
 
             <div className="about-paragraph">
@@ -51,6 +52,19 @@ const AboutDropdown = ({ isOpen, onClose }) => {
                 my craft.
               </p>
             </div>
+
+            <motion.button
+              className="contact-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                onContactClick();
+                onClose();
+              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <FaEnvelope /> Get in Touch
+            </motion.button>
           </div>
         </motion.div>
       )}
