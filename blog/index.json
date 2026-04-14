@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "why-i-chose-systems",
+    "title": "Why I Chose Systems (and Why It's Worth It)",
+    "date": "2024-12-17",
+    "tags": [
+      "University",
+      "Systems",
+      "Internships"
+    ],
+    "summary": "Insights into why I chose to pursue systems as a concentration for my CS degree."
+  },
+  {
+    "slug": "http-from-tcp",
+    "title": "Building an HTTP Server from Raw TCP in Go",
+    "date": "2024-10-05",
+    "tags": [
+      "Go",
+      "Networking",
+      "Systems"
+    ],
+    "summary": "How I built a fully functional HTTP/1.1 server library on top of raw TCP sockets — no net/http allowed."
+  }
+]

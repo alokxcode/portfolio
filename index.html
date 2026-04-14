@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alok — Full-stack developer, systems thinker, builder of things." />
+  <title>Alok — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- PIXEL ART HEADER NAME -->
+  <header class="site-header">
+    <canvas id="pixel-name" aria-label="ALOK"></canvas>
+
+    <nav class="main-nav">
+      <a href="#about" class="nav-link"><span class="nav-icon">&#128100;</span> ~/about</a>
+      <a href="#projects" class="nav-link"><span class="nav-icon">&lt;/&gt;</span> ~/projects</a>
+      <a href="#experience" class="nav-link"><span class="nav-icon">&#128230;</span> ~/experience</a>
+      <a href="blog.html" class="nav-link"><span class="nav-icon">&#128196;</span> ~/blog</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1 class="hero-greeting">Hello, Friend! <span class="wave">👋</span></h1>
+      <p class="hero-subtitle">Backend developer &amp; systems enthusiast</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title">About</h2>
+      <div class="terminal-box">
+        <p class="terminal-prompt">$ cat about.txt</p>
+        <ul class="terminal-list">
+          <li><span class="emoji">💻</span> Backend Developer based in India</li>
+          <li><span class="emoji">🎓</span> CS student with a love (btw real love) for systems &amp; infra</li>
+          <li><span class="emoji">🔧</span> Interests in web, systems, Agentic AI &amp; </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- 1. distributed_file_storage_system -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-title"><span class="folder-icon green">&#128193;</span> <a
+                href="https://github.com/alokxcode/distributed_file_storage_system" target="_blank" rel="noopener"
+                class="exp-link">Distributed File Storage</a></span>
+          </div>
+          <p class="project-desc">A distributed file storage system built in Go — handles chunked file distribution,
+            replication, and retrieval across nodes.</p>
+          <div class="project-footer">
+            <div class="tags">
+              <span class="tag">Go</span>
+              <span class="tag">Distributed</span>
+            </div>
+            <div class="project-icons">
+              <a href="https://github.com/alokxcode/distributed_file_storage_system" target="_blank" rel="noopener"
+                class="icon-btn" title="GitHub" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. httpfromtcp -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-title"><span class="folder-icon green">&#128193;</span> <a
+                href="https://github.com/alokxcode/httpfromtcp" target="_blank" rel="noopener"
+                class="exp-link">httpfromtcp</a></span>
+          </div>
+          <p class="project-desc">HTTP server library built from scratch in Go, on top of raw TCP. No stdlib net/http —
+            just pure sockets.</p>
+          <div class="project-footer">
+            <div class="tags">
+              <span class="tag">Go</span>
+              <span class="tag">TCP</span>
+              <span class="tag">HTTP</span>
+            </div>
+            <div class="project-icons">
+              <a href="https://github.com/alokxcode/httpfromtcp" target="_blank" rel="noopener" class="icon-btn"
+                title="GitHub" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. kairo -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-title"><span class="folder-icon green">&#128193;</span> <a
+                href="https://github.com/alokxcode/kairo" target="_blank" rel="noopener"
+                class="exp-link">Kairo</a></span>
+          </div>
+          <p class="project-desc">A conversational AI companion that talks like a friend — not a chatbot. LangGraph
+            agent + Node.js backend + JS frontend.</p>
+          <div class="project-footer">
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">LangGraph</span>
+            </div>
+            <div class="project-icons">
+              <a href="https://github.com/alokxcode/kairo" target="_blank" rel="noopener" class="icon-btn"
+                title="GitHub" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. cli-task-manager -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-title"><span class="folder-icon green">&#128193;</span> <a
+                href="https://github.com/alokxcode/cli-task-manager" target="_blank" rel="noopener" class="exp-link">CLI
+                Task Manager</a></span>
+          </div>
+          <p class="project-desc">Manage tasks, create files, and organize projects — all inside the terminal. Fast,
+            portable Go CLI tool.</p>
+          <div class="project-footer">
+            <div class="tags">
+              <span class="tag">Go</span>
+              <span class="tag">CLI</span>
+            </div>
+            <div class="project-icons">
+              <a href="https://github.com/alokxcode/cli-task-manager" target="_blank" rel="noopener" class="icon-btn"
+                title="GitHub" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. dj-alok -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-title"><span class="folder-icon green">&#128193;</span> <a
+                href="https://github.com/alokxcode/dj-alok" target="_blank" rel="noopener"
+                class="exp-link">dj-alok</a></span>
+          </div>
+          <p class="project-desc">A fast, minimalist music player with DJ vibe visualization. Go backend, vanilla JS
+            frontend with audio visualizer.</p>
+          <div class="project-footer">
+            <div class="tags">
+              <span class="tag">Go</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">CSS</span>
+            </div>
+            <div class="project-icons">
+              <a href="https://github.com/alokxcode/dj-alok" target="_blank" rel="noopener" class="icon-btn"
+                title="GitHub" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. the_braindump -->
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-title"><span class="folder-icon green">&#128193;</span> <a
+                href="https://github.com/alokxcode/the_braindump" target="_blank" rel="noopener" class="exp-link">The
+                Brain Dump</a></span>
+          </div>
+          <p class="project-desc">A lightweight, privacy-first daily thought journaling app. Stores thoughts locally on
+            your device — no cloud, no tracking.</p>
+          <div class="project-footer">
+            <div class="tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">React Native</span>
+            </div>
+            <div class="project-icons">
+              <a href="https://github.com/alokxcode/the_braindump" target="_blank" rel="noopener" class="icon-btn"
+                title="GitHub" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- EXPERIENCE -->
+    <!-- <section id="experience" class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title"><span class="folder-icon">&#128230;</span> <a href="#" class="exp-link">Freelance: Full-Stack Engineer</a></span>
+          <span class="exp-date">Jan 2025 – Present</span>
+        </div>
+        <p class="exp-desc">Built and shipped multiple client projects — dashboards, APIs, and browser tooling — using React, Node.js, and Go.</p>
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Go</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title"><span class="folder-icon">&#128230;</span> <a href="#" class="exp-link">Open Source: Contributor</a></span>
+          <span class="exp-date">Jun 2024 – Dec 2024</span>
+        </div>
+        <p class="exp-desc">Contributed features and bug-fixes to several open source repositories. Wrote tests, reviewed PRs, and improved documentation.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title"><span class="folder-icon">&#128230;</span> <a href="#" class="exp-link">University: Teaching Assistant — DSA</a></span>
+          <span class="exp-date">Aug 2023 – May 2024</span>
+        </div>
+        <p class="exp-desc">Mentored 200+ students through lab sessions and office hours covering data structures, algorithms, and systems programming.</p>
+        <div class="tags">
+          <span class="tag">C</span>
+          <span class="tag">C++</span>
+        </div>
+      </div>
+
+    </section> -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a href="https://github.com/alokxcode" target="_blank" rel="noopener" class="footer-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.262.82-.583 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.76-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.235-3.22-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.652.242 2.873.12 3.176.77.838 1.232 1.91 1.232 3.22 0 4.61-2.807 5.624-5.48 5.92.43.37.814 1.1.814 2.22 0 1.606-.015 2.898-.015 3.293 0 .323.216.7.825.58C20.565 21.796 24 17.298 24 12c0-6.63-5.37-12-12-12z" />
+      </svg>
+      GitHub
+    </a>
+    <a href="https://linkedin.com/in/alokxcode" target="_blank" rel="noopener" class="footer-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+      LinkedIn
+    </a>
+    <a href="https://youtube.com/@alokxcode" target="_blank" rel="noopener" class="footer-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+      YouTube
+    </a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

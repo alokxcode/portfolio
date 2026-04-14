@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post — Alok</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <!-- marked.js: markdown → HTML renderer (no build step needed) -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <div class="post-page">
+    <a href="blog.html" class="blog-back">&#8592; ~/blog</a>
+
+    <div id="post-meta" class="post-meta"></div>
+    <article id="post-content" class="post-body">
+      <p class="loading-msg">Loading…</p>
+    </article>
+  </div>
+
+  <script>
+    async function loadPost() {
+      const params = new URLSearchParams(window.location.search);
+      const slug   = params.get('slug');
+
+      if (!slug) {
+        document.getElementById('post-content').innerHTML =
+          '<p class="loading-msg">No post specified.</p>';
+        return;
+      }
+
+      try {
+        // Load the raw markdown file
+        const res = await fetch(`blog/${encodeURIComponent(slug)}.md`);
+        if (!res.ok) throw new Error(`Post not found: ${slug}`);
+        const raw = await res.text();
+
+        // Strip frontmatter ---...---
+        const withoutFm = raw.replace(/^---\n[\s\S]*?\n---\n?/, '');
+
+        // Parse frontmatter for title/date/tags
+        const fmMatch = raw.match(/^---\n([\s\S]*?)\n---/);
+        const meta    = parseFm(fmMatch ? fmMatch[1] : '');
+
+        // Update page title
+        if (meta.title) document.title = `${meta.title} — Alok`;
+
+        // Render meta bar
+        document.getElementById('post-meta').innerHTML = `
+          <h1 class="post-title">${escHtml(meta.title || slug)}</h1>
+          <p class="post-date">${escHtml(meta.date || '')}</p>
+          <div class="tags" style="margin-top:8px">
+            ${(meta.tags || []).map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}
+          </div>
+        `;
+
+        // Render markdown
+        marked.setOptions({ breaks: true, gfm: true });
+        document.getElementById('post-content').innerHTML = marked.parse(withoutFm);
+
+      } catch (err) {
+        document.getElementById('post-content').innerHTML =
+          `<p class="loading-msg" style="color:var(--text-dim)">Could not load post: ${err.message}</p>`;
+        console.error(err);
+      }
+    }
+
+    function parseFm(raw) {
+      const meta = {};
+      for (const line of raw.split('\n')) {
+        const i = line.indexOf(':');
+        if (i === -1) continue;
+        const key = line.slice(0, i).trim();
+        let   val = line.slice(i + 1).trim();
+        if (val.startsWith('[') && val.endsWith(']')) {
+          val = val.slice(1, -1).split(',').map(s => s.trim());
+        }
+        meta[key] = val;
+      }
+      return meta;
+    }
+
+    function escHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    loadPost();
+  </script>
+</body>
+
+</html>
